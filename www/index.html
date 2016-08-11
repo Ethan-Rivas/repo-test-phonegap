@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet"  href="libs/jQM-flat/jquery.mobile.flatui.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Casas</title>
+    </head>
+    <body>
+        <!-- App -->
+        <div id="app">
+            <!-- Index page -->
+            <div id="home-page" data-role="page">
+              <div class="login-box">
+                <div class="modal-dialog">
+                  <div class="loginmodal-container">
+                    <h1>Login to Your Account</h1>
+                    <br>
+                    <!-- Login form -->
+                    <form id="myForm" onsubmit="loginForm()">
+                      <input type="text" name="email" placeholder="Username" value="E01-2016">
+                      <input type="password" name="password" placeholder="Password" value="codigojade">
+                      <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settlements list page -->
+            <div  id="settlements-list" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#settlements-geo" data-role="button" data-icon="arrow-l" data-inline="true" >Mapa</a>
+                    <h1>Lista de Viviendas</h1>
+                    <a class="thisIsSparta" data-role="button" data-icon="forward" data-inline="true">Load</a>
+                </div>
+                <div data-role="content"  class="big-text">
+                    <!-- Here goes the List of settlements -->
+                    <table id="myData"></table>
+                </div>
+            </div>
+
+            <!-- Settlements map page -->
+            <div  id="settlements-geo" data-role="page">
+                <div data-role="header" data-id="header1" data-position="fixed" class="ui-header">
+                    <a href="#settlements-list" data-role="button" data-icon="arrow-l" data-inline="true" >Lista</a>
+                    <h1>Geolocalización</h1>
+                </div>
+                <div data-role="content"  class="big-text">
+                    <!-- Here goes the Map with settlements -->
+                    <div id="maps"></div>
+                    <!-- Maps google -->
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbDQlNR0F5DJtvXLmRN2oOK7zczQxkFDo&callback=initMap"></script>
+                    <script src="js/googlemap.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phonegap javascript -->
+        <script type="text/javascript" src="js/index.js"></script>
+        <!-- Libs needed -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="libs/fastclick.min.js"></script>
+        <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="libs/jQueryMobile/jquery.mobile-1.3.2.min.js"></script>
+        <!-- Angular JS -->
+        <script type="text/javascript" src="js/libs/angular.min.js"></script>
+        <script type="text/javascript" src="js/libs/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/libs/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <!-- Initialize app -->
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <!-- Login script -->
+        <script type="text/javascript" src="js/login.js"></script>
+    </body>
+</html>
